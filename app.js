@@ -5,6 +5,7 @@ var cookieParser = require("cookie-parser");
 var logger = require("morgan");
 
 var indexRouter = require("./routes/index");
+var todoRouter = require("./routes/todo/todo")
 var usersRouter = require("./routes/users/users");
 
 var mongoose = require("mongoose");
@@ -35,6 +36,7 @@ app.use(express.static(path.join(__dirname, "public")));
 
 app.use("/", indexRouter);
 app.use("/api/users", usersRouter);
+app.use("/api/todo", todoRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

@@ -55,7 +55,9 @@ module.exports = {
           { expiresIn: "1h" }
         );
         console.log(token);
-        res.json(token);
+        res.json({
+          jwtToken: token,
+        });
       }
     } catch (e) {
       console.log(e);
@@ -75,3 +77,4 @@ module.exports = {
     }
   },
 };
+
