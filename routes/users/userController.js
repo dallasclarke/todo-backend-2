@@ -60,7 +60,7 @@ module.exports = {
         var token = jwt.sign(
           { email: foundEmail.email, _id: foundEmail._id },
           "hamsteroverlord007",
-          { expiresIn: "1h" }
+          { expiresIn: "24h" }
         );
 
         res.json({

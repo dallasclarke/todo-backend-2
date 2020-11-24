@@ -91,4 +91,16 @@ module.exports = {
       res.status(500).json({ message: e.message });
     }
   },
+  updateTodo: async (req, res) => {
+    try {
+      let updatedTodo = await TodoModel.findByIdAndUpdate(
+        req.body.todoID,
+        { todo: req.body.newTodoValue },
+        { new: true }
+      );
+      res.send(updatedTodo);
+    } catch (e) {
+      res.status(500).json({ message: e.message });
+    }
+  },
 };
